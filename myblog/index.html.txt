@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velvet Vogue</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      color: #333;
+    }
+
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: #fff;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background: #555;
+    }
+
+    .hero {
+      padding: 60px;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1521334884684-d80222895322') no-repeat center/cover;
+      color: white;
+    }
+
+    .container {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px;
+      border: none;
+      background: black;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #444;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Velvet Vogue</h1>
+  <p>Your Daily Dose of Style & Elegance</p>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">Trends</a>
+  <a href="#">Outfits</a>
+  <a href="#">Contact</a>
+</nav>
+
+<section class="hero">
+  <h2>Discover the Latest Fashion Trends</h2>
+  <p>Stay stylish, stay confident</p>
+  <button onclick="showMessage()">Subscribe</button>
+</section>
+
+<section class="container">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
+    <h3>Street Style 2026</h3>
+    <p>Explore the hottest street fashion looks this year.</p>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+    <h3>Summer Essentials</h3>
+    <p>Must-have outfits to beat the heat in style.</p>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
+    <h3>Luxury Looks</h3>
+    <p>Get inspired by high-end fashion and elegance.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Velvet Vogue | All Rights Reserved</p>
+</footer>
+
+<script>
+  function showMessage() {
+    alert("Thank you for subscribing to Velvet Vogue!");
+  }
+</script>
+
+</body>
+</html>
