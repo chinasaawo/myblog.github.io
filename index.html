@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Velvet Vogue</title>
+
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background: #fafafa;
       color: #333;
     }
@@ -15,14 +16,20 @@
     header {
       background: #111;
       color: #fff;
-      padding: 20px;
+      padding: 25px;
       text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
     }
 
     nav {
       background: #333;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -36,10 +43,38 @@
     }
 
     .hero {
-      padding: 60px;
+      padding: 80px 20px;
       text-align: center;
       background: url('https://images.unsplash.com/photo-1521334884684-d80222895322') no-repeat center/cover;
       color: white;
+    }
+
+    .hero input {
+      padding: 10px;
+      width: 250px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .hero button {
+      padding: 10px 15px;
+      border: none;
+      background: black;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-left: 5px;
+    }
+
+    .hero button:hover {
+      background: #444;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2rem;
     }
 
     .container {
@@ -58,7 +93,7 @@
     }
 
     .card:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
     }
 
     .card img {
@@ -66,28 +101,46 @@
       border-radius: 10px;
     }
 
+    .about, .contact {
+      padding: 40px 20px;
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .contact button {
+      padding: 10px 20px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
     footer {
       background: #111;
       color: white;
       text-align: center;
-      padding: 15px;
-      margin-top: 20px;
+      padding: 20px;
+      margin-top: 30px;
     }
 
-    button {
-      padding: 10px;
-      border: none;
-      background: black;
+    .socials a {
       color: white;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    button:hover {
-      background: #444;
+      margin: 0 10px;
+      text-decoration: none;
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -97,16 +150,20 @@
 
 <nav>
   <a href="#">Home</a>
-  <a href="#">Trends</a>
-  <a href="#">Outfits</a>
-  <a href="#">Contact</a>
+  <a href="#trends">Trends</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <section class="hero">
   <h2>Discover the Latest Fashion Trends</h2>
   <p>Stay stylish, stay confident</p>
-  <button onclick="showMessage()">Subscribe</button>
+
+  <input type="email" id="email" placeholder="Enter your email">
+  <button onclick="subscribe()">Subscribe</button>
 </section>
+
+<h2 class="section-title" id="trends">Latest Trends</h2>
 
 <section class="container">
   <div class="card">
@@ -128,13 +185,47 @@
   </div>
 </section>
 
+<section class="about" id="about">
+  <h2>About Velvet Vogue</h2>
+  <p>
+    Velvet Vogue is your ultimate fashion destination. We bring you the latest trends,
+    outfit inspirations, and styling tips to help you look your best every day.
+  </p>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+
+  <input type="text" placeholder="Your Name">
+  <input type="email" placeholder="Your Email">
+  <textarea rows="5" placeholder="Your Message"></textarea>
+
+  <button onclick="sendMessage()">Send Message</button>
+</section>
+
 <footer>
   <p>© 2026 Velvet Vogue | All Rights Reserved</p>
+
+  <div class="socials">
+    <a href="#">Instagram</a>
+    <a href="#">Twitter</a>
+    <a href="#">Pinterest</a>
+  </div>
 </footer>
 
 <script>
-  function showMessage() {
-    alert("Thank you for subscribing to Velvet Vogue!");
+  function subscribe() {
+    let email = document.getElementById("email").value;
+
+    if(email === "") {
+      alert("Please enter your email!");
+    } else {
+      alert("Subscribed successfully with " + email);
+    }
+  }
+
+  function sendMessage() {
+    alert("Message sent! We'll get back to you soon.");
   }
 </script>
 
